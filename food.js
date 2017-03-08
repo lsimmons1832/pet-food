@@ -9,17 +9,23 @@ function makeDOM(xhrData){
 
 		  dogFoodString += `<div class="col-sm-6 col-md-4">`;
 		  dogFoodString += `<div class="thumbnail">`;
-		  dogFoodString += `<p>"${currentFood.name}" </p>`;
-		  dogFoodString += `<p>"${currentFood.type}" </p>`;
-		  // dogFoodString += ` <h3>${currentFood.name}</h3>`;
+		  dogFoodString += `<div><p>"${currentFood.name}" </p>`;
+
+			  for (var j = 0; j < xhrData.dog_brands.types; j++) {
+		  		var currentType = xhrData.dog_brands.types[i];
+		  			
+		  			dogFoodString += `<p>"${currentType.type[j]}"</p>`;
+		  }
+		  // dogFoodString += ` <h3>${currentFood.namei</h3>`;
 		  // dogFoodString += `<p>The ${currentFood.type}</p>`;
 		  // dogFoodString += `<p>Likes to eat: ${currentFood.food}</p>`;
-		  dogFoodString += `</div></div></div>`;
+		  dogFoodString += `</div></div>`;
+		  console.log("my type",currentType);
 
 
 	}
 	dogFoodContainer.innerHTML += dogFoodString;
-
+	
 }
 
 
