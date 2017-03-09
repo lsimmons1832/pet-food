@@ -12,16 +12,10 @@ function makeDOM(xhrData){
 		  dogFoodString += `<div class="thumbnail">`;
 		  dogFoodString += `<div><p>${currentFood.name} </p>`;
 		  dogFoodString += `<p>${xhrData.dog_brands[i].types[0].type}</p>`;
-
-			  // for (var j = 0; j < xhrData.dog_brands.types; j++) {
-		  	// 	currentType = xhrData.dog_brands[0].types[0].type;
-		  			
-		  //}
-		  // dogFoodString += ` <h3>${currentFood.namei</h3>`;
-		  // dogFoodString += `<p>The ${currentFood.type}</p>`;
-		  // dogFoodString += `<p>Likes to eat: ${currentFood.food}</p>`;
+		  dogFoodString += `<p>${xhrData.dog_brands[i].types[0].volumes[0].name}</p>`;
+		  dogFoodString += `<p>${xhrData.dog_brands[i].types[0].volumes[0].price}</p>`;
 		  dogFoodString += `</div></div></div>`;
-		  // console.log("my type",xhrData.dog_brands[0].types[0].type);
+		  console.log("my type",xhrData.dog_brands[0].types[0].volumes[0].name);
 
 
 	}
