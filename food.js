@@ -4,6 +4,7 @@ var dogFoodContainer = document.getElementById("dogFoodContainer");
 var dogFoodString = "";
 var currentFood;
 var currentSize;
+var currentPrice;
 function makeDOM(xhrData){
 	for (var i = 0; i < xhrData.dog_brands.length; i++) {
 		currentFood = xhrData.dog_brands[i];
@@ -12,7 +13,6 @@ function makeDOM(xhrData){
 		  // dogFoodString += `<p>${xhrData.dog_brands[i].types[0].type}</p>`;
 		  // dogFoodString += `<p>${xhrData.dog_brands[i].types[0].volumes[0].name}</p>`;
 		  // dogFoodString += `<p>${xhrData.dog_brands[i].types[0].volumes[0].price}</p>`;
-		  // dogFoodString += `</div></div></div>`;
 		  // console.log("my type",xhrData.dog_brands[1].types[1].volumes[1].name);
 		for (var j = 0; j < xhrData.dog_brands[i].types.length; j++) {
 		  	dogFoodString += `<p>${xhrData.dog_brands[i].types[j].type}</p>`;
@@ -21,6 +21,8 @@ function makeDOM(xhrData){
 		  		currentSize = xhrData.dog_brands[i].types[j].volumes[k];
 
 		  		dogFoodString += `<p>${xhrData.dog_brands[i].types[j].volumes[k].name}</p>`
+		  		dogFoodString += `<p>${xhrData.dog_brands[i].types[j].volumes[k].price}</p>`
+		  		dogFoodString += `</div></div></div>`;
 		  	}
 		  }
 		}
