@@ -16,6 +16,12 @@ function makeDOM(xhrData){
 		  // console.log("my type",xhrData.dog_brands[1].types[1].volumes[1].name);
 		for (var j = 0; j < xhrData.dog_brands[i].types.length; j++) {
 		  	dogFoodString += `<p>${xhrData.dog_brands[i].types[j].type}</p>`;
+
+		  	for (var k = 0; k < xhrData.dog_brands[i].types[j].volumes.length; k++) {
+		  		currentSize = xhrData.dog_brands[i].types[j].volumes[k];
+
+		  		dogFoodString += `<p>${xhrData.dog_brands[i].types[j].volumes[k].name}</p>`
+		  	}
 		  }
 		}
 	dogFoodContainer.innerHTML += dogFoodString;
