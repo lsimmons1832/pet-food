@@ -3,24 +3,25 @@ var dogFoodContainer = document.getElementById("dogFoodContainer");
 
 var dogFoodString = "";
 var currentFood;
+var currentType;
 function makeDOM(xhrData){
 	for (var i = 0; i < xhrData.dog_brands.length; i++) {
 		currentFood = xhrData.dog_brands[i];
 
 		  dogFoodString += `<div class="col-sm-6 col-md-4">`;
 		  dogFoodString += `<div class="thumbnail">`;
-		  dogFoodString += `<div><p>"${currentFood.name}" </p>`;
+		  dogFoodString += `<div><p>${currentFood.name} </p>`;
+		  dogFoodString += `<p>${xhrData.dog_brands[i].types[0].type}</p>`;
 
-			  for (var j = 0; j < xhrData.dog_brands.types; j++) {
-		  		var currentType = xhrData.dog_brands.types[i];
+			  // for (var j = 0; j < xhrData.dog_brands.types; j++) {
+		  	// 	currentType = xhrData.dog_brands[0].types[0].type;
 		  			
-		  			dogFoodString += `<p>"${currentType.type[j]}"</p>`;
-		  }
+		  //}
 		  // dogFoodString += ` <h3>${currentFood.namei</h3>`;
 		  // dogFoodString += `<p>The ${currentFood.type}</p>`;
 		  // dogFoodString += `<p>Likes to eat: ${currentFood.food}</p>`;
-		  dogFoodString += `</div></div>`;
-		  console.log("my type",currentType);
+		  dogFoodString += `</div></div></div>`;
+		  // console.log("my type",xhrData.dog_brands[0].types[0].type);
 
 
 	}
